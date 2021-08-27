@@ -16,6 +16,7 @@ public class Algo4 {
     private static void solution(String[] array) {
         for (String string : array) {
             StringBuilder sb = new StringBuilder();
+            //sb.reverse()
             for (int i = string.length()-1; i >= 0; i--) {
                 sb.append(string.charAt(i));
             }
