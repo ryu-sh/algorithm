@@ -1,4 +1,4 @@
-package naver;
+package test.naver;
 
 import java.util.HashMap;
 import java.util.Map;

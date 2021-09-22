@@ -20,12 +20,12 @@ public class Algo9 {
     private static int solution(int[][] array) {
 
         int rowMaxSum = rowMaxSum(array);
-        int colMaxSum = colMaxSum(array);
+//        int colMaxSum = colMaxSum(array);
         int diagonalSum = diagonalSum(array);
 
-        int result = Math.max(rowMaxSum,colMaxSum);
+//        int result = Math.max(rowMaxSum,colMaxSum);
 
-        return Math.max(result, diagonalSum);
+        return Math.max(rowMaxSum, diagonalSum);
     }
 
     private static int diagonalSum(int[][] array) {
@@ -34,11 +34,12 @@ public class Algo9 {
 
         for (int i = 0; i < array.length; i++) {
             leftDiagonalSum += array[i][i];
-        }
-
-        for (int i = 0; i < array.length; i++) {
             rightDiagonalSum += array[i][array.length-1-i];
         }
+
+//        for (int i = 0; i < array.length; i++) {
+//            rightDiagonalSum += array[i][array.length-1-i];
+//        }
 
         return Math.max(leftDiagonalSum, rightDiagonalSum);
     }
@@ -48,12 +49,13 @@ public class Algo9 {
 
         for (int i = 0; i < array.length; i++) {
             int rowSum = 0;
+            int colSum = 0;
             for (int j = 0; j < array[0].length; j++) {
                 rowSum += array[i][j];
+                colSum += array[j][i];
             }
-            if (maxSum < rowSum) {
-                maxSum = rowSum;
-            }
+            maxSum = Math.max(maxSum, rowSum);
+            maxSum = Math.max(maxSum, colSum);
         }
 
         return maxSum;

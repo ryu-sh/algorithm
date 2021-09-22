@@ -47,6 +47,27 @@ public class Algo1 {
 
     // 2pointer 사용하여 2개 배열 비교한다.
     private static List<Integer> solution2(int[] array1, int[] array2) {
+        int pointer1 = 0;
+        int pointer2 = 0;
+        int resultIndex = 0;
+        int[] result = new int[array1.length + array2.length];
+        while (pointer1 < array1.length && pointer2 < array2.length) {
+            if (array1[pointer1] <= array2[pointer2]) {
+                result[resultIndex] = array1[pointer1++];
+            }
+            else {
+                result[resultIndex] = array2[pointer2++];
+            }
+            resultIndex++;
+        }
+        while (pointer1 < array1.length) {
+            result[resultIndex] = array1[pointer1++];
+            resultIndex++;
+        }
+        while (pointer2 < array2.length) {
+            result[resultIndex] = array2[pointer2++];
+            resultIndex++;
+        }
         return null;
     }
 

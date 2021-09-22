@@ -18,17 +18,14 @@ public class Algo3 {
     }
 
     private static int solution(int[] array1, int consecutive) {
-        int max = 0;
-
-        for (int i = 0; i < array1.length-consecutive; i++) {
-            int temp = 0;
-            // 미리 계산하고 하나씩 빼고 더하고 하면서 구해야 한다.
-//            for (int j = 0; j < consecutive; j++) {
-//                temp += array1[i+j];
-//            }
-            if (max < temp) {
-                max = temp;
-            }
+        int temp = 0;
+        for (int i = 0; i < consecutive; i++) {
+            temp += array1[i];
+        }
+        int max = temp;
+        for (int i = consecutive; i < array1.length; i++) {
+            temp = temp - array1[i - consecutive] + array1[i];
+            max = Math.max(temp, max);
         }
 
         return max;

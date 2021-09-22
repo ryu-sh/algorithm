@@ -1,4 +1,4 @@
-package naver;
+package test.naver;
 
 public class Test2 {
     public static void main(String[] args) {
@@ -16,6 +16,7 @@ public class Test2 {
         if (isPerfect(A)) {
             return result;
         }
+        // 하나의 나무 삭제 위한 반복문
         for (int i = 0; i < A.length; i++) {
             Boolean isGreater = null;
             int prev = 0;
