@@ -19,12 +19,7 @@ public class Algo4 {
     }
 
     private static int solution(int[][] array) {
-        Arrays.sort(array, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o2[0] - o1[0];
-            }
-        });
+        Arrays.sort(array, (o1, o2) -> o2[0] - o1[0]);
 
         int[] dynamic = new int[array.length];
         dynamic[0] = array[0][1];
