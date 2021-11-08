@@ -27,6 +27,7 @@ public class Algo2 {
                 "Sun 01:00-21:00"));
     }
 
+    
     public int solution(String S) {
         // write your code in Java SE 8
         String[] schedules = S.split("\n");
