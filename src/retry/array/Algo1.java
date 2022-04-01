@@ -12,23 +12,23 @@ public class Algo1 {
         for (int i = 0; i < number; i++) {
             numbers[i] = in.nextInt();
         }
-        List<Integer> result = solution(numbers);
-        for (Integer integer : result) {
-            System.out.print(integer + " ");
-        }
+        solution(numbers)
+                .forEach(integer -> System.out.print(integer + " "));
+
     }
 
     private static List<Integer> solution(int[] numbers) {
-        int prev = numbers[0];
-        List<Integer> result = new ArrayList<>();
-        result.add(prev);
+        int prev = Integer.MIN_VALUE;
+        List<Integer> results = new ArrayList<>();
 
-        for (int i = 1; i < numbers.length; i++) {
-            if (prev < numbers[i]) {
-                result.add(numbers[i]);
+        for (int number : numbers) {
+            if (prev < number) {
+                results.add(number);
             }
-            prev = numbers[i];
+            prev = number;
         }
-        return result;
+        return results;
     }
+
+
 }
