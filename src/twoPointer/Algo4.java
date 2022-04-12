@@ -22,6 +22,9 @@ public class Algo4 {
         int rightPointer = 1;
         int answer = 0;
         int tempSum = array[0];
+        if (tempSum == targetNumber) {
+            answer ++;
+        }
         while (rightPointer < array.length) {
             tempSum += array[rightPointer++];
 
